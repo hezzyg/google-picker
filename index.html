@@ -53,8 +53,10 @@
       // Create and render a Picker object for picking from Google Photos.
       function createPicker() {
         if (pickerApiLoaded && oauthToken) {
+          var view = new google.picker.View(google.picker.ViewId.DOCS);
+          view.setMimeTypes("image/png,image/jpeg,image/jpg");
           var picker = new google.picker.PickerBuilder().
-              addView(google.picker.ViewId.PHOTOS).
+              addView(view).
               setOAuthToken(oauthToken).
               setDeveloperKey(developerKey).
               setCallback(pickerCallback).

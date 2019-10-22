@@ -75,7 +75,25 @@
         var message = 'You picked: ' + url;
         document.getElementById('result').innerHTML = message;
         console.log('picked ', data);
-        console.log(data.docs[0].url + "&name=" + data.docs[0].name + "&mimetype=" + data.docs[0].mimetype + "&fileId=" + data.docs[0].id + "&token=" + oauthToken);
+        //console.log(data.docs[0].url + "&name=" + data.docs[0].name + "&mimetype=" + data.docs[0].mimetype + "&fileId=" + data.docs[0].id + "&token=" + oauthToken);
+        
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', data.docs[0].url);
+        xhr.setRequestHeader('Authorization', 'Bearer ' + oauthToken);
+        xhr.responseType = 'blob';
+
+        xhr.onload = function () {
+
+           // Better trigger and event and manage the response outside the onload function. 
+           // Just for demo purposes:
+
+           console.log(xhr.response) );
+        };
+
+        xhr.onerror = function () {
+        };
+
+        xhr.send();
       }
     </script>
   </head>

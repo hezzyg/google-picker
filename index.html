@@ -15,7 +15,7 @@
       var clientId = '614945326036-vpproklap760nbiiiedfjedd1ic1n35t.apps.googleusercontent.com';
 
       // Scope to use to access user's photos.
-      var scope = 'https://www.googleapis.com/auth/photos';
+      var scope = 'https://www.googleapis.com/auth/drive.readonly';
 
       var pickerApiLoaded = false;
       var oauthToken;
@@ -72,6 +72,7 @@
         }
         var message = 'You picked: ' + url;
         document.getElementById('result').innerHTML = message;
+        console.log('picked ', data);
       }
     </script>
   </head>

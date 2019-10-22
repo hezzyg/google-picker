@@ -80,6 +80,7 @@
         var xhr = new XMLHttpRequest();
         xhr.open('GET', data.docs[0].url);
         xhr.setRequestHeader('Authorization', 'Bearer ' + oauthToken);
+        xhr.setRequestHeader('Access-Control-Allow-Headers', '*');
         xhr.responseType = 'blob';
 
         xhr.onload = function () {

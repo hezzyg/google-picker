@@ -9,7 +9,7 @@
       // The Browser API key obtained from the Google API Console.
       var developerKey = 'AIzaSyC2Bs7Con5U5HIii4tUcVlvkFxm1VDwVAo';
 
-      
+      var appId = "1234567890";      
     
       // The Client ID obtained from the Google API Console. Replace with your own Client ID.
       var clientId = '614945326036-vpproklap760nbiiiedfjedd1ic1n35t.apps.googleusercontent.com';
@@ -57,6 +57,7 @@
           view.setMimeTypes("image/png,image/jpeg,image/jpg");
           var picker = new google.picker.PickerBuilder().
               addView(view).
+              setAppId(appId).
               setOAuthToken(oauthToken).
               setDeveloperKey(developerKey).
               setCallback(pickerCallback).

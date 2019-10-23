@@ -54,7 +54,7 @@
       function createPicker() {
         if (pickerApiLoaded && oauthToken) {
           var view = new google.picker.View(google.picker.ViewId.DOCS);
-          const viewGroup = google.picker.ViewGroup(google.picker.ViewId.FOLDERS);
+          const viewGroup = new google.picker.ViewGroup(google.picker.ViewId.FOLDERS);
           viewGroup
             .addView(google.picker.ViewId.DOCS)
             .addLabel('My Group');

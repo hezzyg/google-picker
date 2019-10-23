@@ -54,9 +54,14 @@
       function createPicker() {
         if (pickerApiLoaded && oauthToken) {
           var view = new google.picker.View(google.picker.ViewId.DOCS);
-          view.setMimeTypes("image/png,image/jpeg,image/jpg");
+          const viewGroup = new google.picker.ViewGgroup(google.picker.ViewId.FOLDERS);
+          viewGroup
+            .addView(google.picker.ViewId.DOCS)
+            .addLabel('My Group');
+//           view.setMimeTypes("image/png,image/jpeg,image/jpg");
           var picker = new google.picker.PickerBuilder().
-              addView(view).
+//               addView(view).
+              addViewGroup(viewGroup).
               setAppId(appId).
               setOAuthToken(oauthToken).
               setDeveloperKey(developerKey).

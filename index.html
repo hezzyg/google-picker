@@ -78,7 +78,7 @@
         //console.log(data.docs[0].url + "&name=" + data.docs[0].name + "&mimetype=" + data.docs[0].mimetype + "&fileId=" + data.docs[0].id + "&token=" + oauthToken);
         
         var xhr = new XMLHttpRequest();
-        xhr.open('GET', data.docs[0].url);
+        xhr.open('GET', 'https://www.googleapis.com/drive/v3/files/' + data.docs[0].id + '?alt=media');
         xhr.setRequestHeader('Authorization', 'Bearer ' + oauthToken);
         xhr.setRequestHeader('Access-Control-Allow-Headers', '*');
         xhr.responseType = 'blob';
